@@ -1,0 +1,396 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-sunrise, .icon-sun, .icon-moon, .icon-wind, .icon-windy, .icon-snowflake, .icon-cloudy, .icon-sun-2, .icon-cloud, .icon-weather, .icon-weather-2, .icon-lines, .icon-cloud-2, .icon-lightning, .icon-cloudy-2, .icon-none, .icon-moon-2, .icon-compass, .icon-thermometer, .icon-sun-3, .icon-lightning-2, .icon-cloudy-3, .icon-cloud-3, .icon-weather-3, .icon-cloudy-4, .icon-weather-4, .icon-snowy, .icon-weather-5, .icon-snowy-2, .icon-snowy-3, .icon-windy-2, .icon-snowy-4, .icon-snowy-5, .icon-rainy, .icon-windy-3, .icon-windy-4, .icon-windy-5, .icon-rainy-2, .icon-rainy-3, .icon-lightning-3, .icon-cloud-4, .icon-rainy-4, .icon-lightning-4, .icon-cloud-5, .icon-Celsius, .icon-Fahrenheit, .icon-home, .icon-newspaper, .icon-office, .icon-pencil, .icon-blog, .icon-droplet, .icon-images, .icon-image, .icon-connection, .icon-bullhorn, .icon-film, .icon-camera, .icon-music, .icon-book, .icon-profile, .icon-file, .icon-copy, .icon-copy-2, .icon-folder, .icon-tags, .icon-ticket, .icon-cart, .icon-coin, .icon-credit, .icon-calculate, .icon-support, .icon-clock, .icon-map, .icon-location, .icon-pushpin, .icon-envelop, .icon-address-book, .icon-phone, .icon-alarm, .icon-calendar, .icon-drawer, .icon-drawer-2, .icon-box-add, .icon-box-remove, .icon-undo, .icon-redo, .icon-bubbles, .icon-user, .icon-users, .icon-quotes-left, .icon-busy, .icon-spinner, .icon-spinner-2, .icon-zoom-in, .icon-zoom-out, .icon-search, .icon-cog, .icon-lock, .icon-unlocked, .icon-settings, .icon-wand, .icon-aid, .icon-bug, .icon-gift, .icon-flag, .icon-link, .icon-eye, .icon-eye-blocked, .icon-star, .icon-star-2, .icon-star-3, .icon-checkmark, .icon-close, .icon-plus, .icon-minus, .icon-exit, .icon-enter, .icon-share {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-sunrise:before {
+	content: "\e000";
+}
+.icon-sun:before {
+	content: "\e001";
+}
+.icon-moon:before {
+	content: "\e002";
+}
+.icon-wind:before {
+	content: "\e003";
+}
+.icon-windy:before {
+	content: "\e004";
+}
+.icon-snowflake:before {
+	content: "\e005";
+}
+.icon-cloudy:before {
+	content: "\e006";
+}
+.icon-sun-2:before {
+	content: "\e007";
+}
+.icon-cloud:before {
+	content: "\e008";
+}
+.icon-weather:before {
+	content: "\e009";
+}
+.icon-weather-2:before {
+	content: "\e00a";
+}
+.icon-lines:before {
+	content: "\e00b";
+}
+.icon-cloud-2:before {
+	content: "\e00c";
+}
+.icon-lightning:before {
+	content: "\e00d";
+}
+.icon-cloudy-2:before {
+	content: "\e00e";
+}
+.icon-none:before {
+	content: "\e00f";
+}
+.icon-moon-2:before {
+	content: "\e010";
+}
+.icon-compass:before {
+	content: "\e011";
+}
+.icon-thermometer:before {
+	content: "\e012";
+}
+.icon-sun-3:before {
+	content: "\e013";
+}
+.icon-lightning-2:before {
+	content: "\e014";
+}
+.icon-cloudy-3:before {
+	content: "\e015";
+}
+.icon-cloud-3:before {
+	content: "\e016";
+}
+.icon-weather-3:before {
+	content: "\e017";
+}
+.icon-cloudy-4:before {
+	content: "\e018";
+}
+.icon-weather-4:before {
+	content: "\e019";
+}
+.icon-snowy:before {
+	content: "\e01a";
+}
+.icon-weather-5:before {
+	content: "\e01b";
+}
+.icon-snowy-2:before {
+	content: "\e01c";
+}
+.icon-snowy-3:before {
+	content: "\e01d";
+}
+.icon-windy-2:before {
+	content: "\e01e";
+}
+.icon-snowy-4:before {
+	content: "\e01f";
+}
+.icon-snowy-5:before {
+	content: "\e020";
+}
+.icon-rainy:before {
+	content: "\e021";
+}
+.icon-windy-3:before {
+	content: "\e022";
+}
+.icon-windy-4:before {
+	content: "\e023";
+}
+.icon-windy-5:before {
+	content: "\e024";
+}
+.icon-rainy-2:before {
+	content: "\e025";
+}
+.icon-rainy-3:before {
+	content: "\e026";
+}
+.icon-lightning-3:before {
+	content: "\e027";
+}
+.icon-cloud-4:before {
+	content: "\e028";
+}
+.icon-rainy-4:before {
+	content: "\e029";
+}
+.icon-lightning-4:before {
+	content: "\e02a";
+}
+.icon-cloud-5:before {
+	content: "\e02b";
+}
+.icon-Celsius:before {
+	content: "\e02c";
+}
+.icon-Fahrenheit:before {
+	content: "\e02d";
+}
+.icon-home:before {
+	content: "\e02e";
+}
+.icon-newspaper:before {
+	content: "\e031";
+}
+.icon-office:before {
+	content: "\e032";
+}
+.icon-pencil:before {
+	content: "\e033";
+}
+.icon-blog:before {
+	content: "\e037";
+}
+.icon-droplet:before {
+	content: "\e038";
+}
+.icon-images:before {
+	content: "\e03a";
+}
+.icon-image:before {
+	content: "\e03b";
+}
+.icon-connection:before {
+	content: "\e03e";
+}
+.icon-bullhorn:before {
+	content: "\e03d";
+}
+.icon-film:before {
+	content: "\e02f";
+}
+.icon-camera:before {
+	content: "\e030";
+}
+.icon-music:before {
+	content: "\e034";
+}
+.icon-book:before {
+	content: "\e035";
+}
+.icon-profile:before {
+	content: "\e036";
+}
+.icon-file:before {
+	content: "\e039";
+}
+.icon-copy:before {
+	content: "\e03c";
+}
+.icon-copy-2:before {
+	content: "\e03f";
+}
+.icon-folder:before {
+	content: "\e040";
+}
+.icon-tags:before {
+	content: "\e041";
+}
+.icon-ticket:before {
+	content: "\e042";
+}
+.icon-cart:before {
+	content: "\e043";
+}
+.icon-coin:before {
+	content: "\e044";
+}
+.icon-credit:before {
+	content: "\e045";
+}
+.icon-calculate:before {
+	content: "\e046";
+}
+.icon-support:before {
+	content: "\e047";
+}
+.icon-clock:before {
+	content: "\e049";
+}
+.icon-map:before {
+	content: "\e04a";
+}
+.icon-location:before {
+	content: "\e04b";
+}
+.icon-pushpin:before {
+	content: "\e04c";
+}
+.icon-envelop:before {
+	content: "\e04d";
+}
+.icon-address-book:before {
+	content: "\e04e";
+}
+.icon-phone:before {
+	content: "\e04f";
+}
+.icon-alarm:before {
+	content: "\e050";
+}
+.icon-calendar:before {
+	content: "\e048";
+}
+.icon-drawer:before {
+	content: "\e051";
+}
+.icon-drawer-2:before {
+	content: "\e052";
+}
+.icon-box-add:before {
+	content: "\e053";
+}
+.icon-box-remove:before {
+	content: "\e055";
+}
+.icon-undo:before {
+	content: "\e054";
+}
+.icon-redo:before {
+	content: "\e056";
+}
+.icon-bubbles:before {
+	content: "\e057";
+}
+.icon-user:before {
+	content: "\e058";
+}
+.icon-users:before {
+	content: "\e059";
+}
+.icon-quotes-left:before {
+	content: "\e05a";
+}
+.icon-busy:before {
+	content: "\e05b";
+}
+.icon-spinner:before {
+	content: "\e05d";
+}
+.icon-spinner-2:before {
+	content: "\e05c";
+}
+.icon-zoom-in:before {
+	content: "\e05e";
+}
+.icon-zoom-out:before {
+	content: "\e05f";
+}
+.icon-search:before {
+	content: "\e060";
+}
+.icon-cog:before {
+	content: "\e061";
+}
+.icon-lock:before {
+	content: "\e062";
+}
+.icon-unlocked:before {
+	content: "\e063";
+}
+.icon-settings:before {
+	content: "\e064";
+}
+.icon-wand:before {
+	content: "\e065";
+}
+.icon-aid:before {
+	content: "\e066";
+}
+.icon-bug:before {
+	content: "\e067";
+}
+.icon-gift:before {
+	content: "\e068";
+}
+.icon-flag:before {
+	content: "\e069";
+}
+.icon-link:before {
+	content: "\e06a";
+}
+.icon-eye:before {
+	content: "\e06b";
+}
+.icon-eye-blocked:before {
+	content: "\e06c";
+}
+.icon-star:before {
+	content: "\e06d";
+}
+.icon-star-2:before {
+	content: "\e06e";
+}
+.icon-star-3:before {
+	content: "\e06f";
+}
+.icon-checkmark:before {
+	content: "\e070";
+}
+.icon-close:before {
+	content: "\e071";
+}
+.icon-plus:before {
+	content: "\e072";
+}
+.icon-minus:before {
+	content: "\e073";
+}
+.icon-exit:before {
+	content: "\e074";
+}
+.icon-enter:before {
+	content: "\e075";
+}
+.icon-share:before {
+	content: "\e079";
+}
