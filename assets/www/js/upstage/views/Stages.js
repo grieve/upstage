@@ -3,28 +3,33 @@ define(
         'jquery',
         'underscore',
         'backbone',
+        'js/upstage/utils/FileManager',
+        'js/upstage/utils/FestivalManager',
         'text!js/upstage/templates/stages.html'
     ],
     function(
         $,
         _,
         Backbone,
+        FileManager,
+        FestivalManager,
         tmpl_Main
     )
     {
         var StagesView = Backbone.View.extend({
-            depth: 2,
+            depth: 0,
             tagName: 'section',
             className: 'page',
             template: _.template(tmpl_Main),
-            initialize: function()
+            initialize: function(opts)
             {
-
+                var me = this;
+                me.festival = FestivalManager.get(opts.slug);
             },
             render: function()
             {
                 var me = this;
-                me.$el.html(me.template({}));
+                me.$el.html(me.template({festival: me.festival}));
             }
         });
 

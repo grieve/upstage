@@ -1,24 +1,42 @@
 <div class="page">
   <header class="action-bar fixed-top">
-    <a href="#/index" class="app-icon action up" data-transition="pop">
-      <i class="chevron"></i>
-      <i class="icon-music"></i>
+    <a href="#/index" class="app-icon action">
+      <i class="icon-angle-left top-action"></i>
+      <i class="icon-ticket"></i>
     </a>
-    <h1 class="title">&nbsp;&nbsp;Acts</h1>
+    <h1 class="title">&nbsp;&nbsp;<%- festival.name %> - Acts</h1>
     <ul class="actions pull-right">
-      <li><a href="#" class="action" title="Settings" data-transition="push"><i class="icon-settings"></i></a></li> 
-      <li><a href="#" class="action" title="Sign in" data-transition="push"><i class="icon-enter"></i></a></li>
+      <li>
+        <a href="#/festival/<%- festival.slug %>/search" class="action" title="Search">
+          <i class="icon-search"></i>
+        </a>
+      </li>
     </ul>
   </header>
   <nav class="action-bar fixed-bottom">
-    <ul class="actions flex" data-overflow="false">
-      <li><a href="#/acts" class="action active" title="Acts" data-transition="push"><i class="icon-music"></i></a></li>
-      <li><a href="#/stages" class="action" title="Stages" data-transition="push"><i class="icon-location"></i></a></li>
-      <li><a href="#/map" class="action" title="Map" data-transition="push"><i class="icon-map"></i></a></li>
-      <li><a href="s#/search" class="action" title="Search" data-transition="push"><i class="icon-search"></i></a></li>
+    <ul class="actions flex">
+      <li>
+        <a href="#/festival/<%- festival.slug %>/stages" class="action" title="Stages">
+          <i class="icon-sort-by-attributes"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#/festival/<%- festival.slug %>/acts" class="action active" title="Acts">
+          <i class="icon-group"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#/festival/<%- festival.slug %>/map" class="action" title="Map">
+          <i class="icon-map-marker"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#/festival/<%- festival.slug %>/about" class="action" title="About">
+          <i class="icon-info-sign"></i>
+        </a>
+      </li>
     </ul>
   </nav>
   <div class="content inset">
-    <h1>ACTS!</h1>
   </div>
 </div>

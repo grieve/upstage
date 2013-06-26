@@ -5,7 +5,7 @@ define(
         'backbone',
         'js/upstage/utils/FileManager',
         'js/upstage/utils/FestivalManager',
-        'text!js/upstage/templates/acts.html'
+        'text!js/upstage/templates/about.html'
     ],
     function(
         $,
@@ -16,7 +16,7 @@ define(
         tmpl_Main
     )
     {
-        var ActsView = Backbone.View.extend({
+        var AboutView = Backbone.View.extend({
             depth: 0,
             tagName: 'section',
             className: 'page',
@@ -33,6 +33,6 @@ define(
             }
         });
 
-        return ActsView;
+        return AboutView;
     }
 );

@@ -4,7 +4,7 @@
       <i class="icon-angle-left top-action"></i>
       <i class="icon-ticket"></i>
     </a>
-    <h1 class="title">&nbsp;&nbsp;<%- festival.name %> - Stages</h1>
+    <h1 class="title">&nbsp;&nbsp;<%- festival.name %> - About</h1>
     <ul class="actions pull-right">
       <li>
         <a href="#/festival/<%- festival.slug %>/search" class="action" title="Search">
@@ -16,7 +16,7 @@
   <nav class="action-bar fixed-bottom">
     <ul class="actions flex">
       <li>
-        <a href="#/festival/<%- festival.slug %>/stages" class="action active" title="Stages">
+        <a href="#/festival/<%- festival.slug %>/stages" class="action" title="Stages">
           <i class="icon-sort-by-attributes"></i>
         </a>
       </li>
@@ -31,29 +31,12 @@
         </a>
       </li>
       <li>
-        <a href="#/festival/<%- festival.slug %>/about" class="action" title="About">
+        <a href="#/festival/<%- festival.slug %>/about" class="action active" title="About">
           <i class="icon-info-sign"></i>
         </a>
       </li>
     </ul>
   </nav>
   <div class="content inset">
-    <div class="form-spinner">
-      <a href="#" class="toggle-spinner"><%- festival.stages[0].name %></a>
-      <ul class="spinner">
-      <% _.each(festival.stages, function(stage, idx) { %>
-        <% if (idx > 0) { %>
-        <li class="spinner-item"><a href="#"><%- stage.name %></a></li>
-        <% } %>
-      <% }); %>
-      </ul>
-    </div>
-    <div class="stage-list">
-      <ul class="list inset">
-      <% _.each(festival.acts, function(act, idx) { %>
-        <li class="list-item-single-line"><%- act.start %> - <%- act.name %></li>
-      <% }); %>
-      </ul>
-    </div>
   </div>
 </div>

@@ -7,6 +7,7 @@ define(
         'js/upstage/views/Acts',
         'js/upstage/views/Stages',
         'js/upstage/views/Map',
+        'js/upstage/views/About',
         'js/upstage/views/Search'
     ],
     function(
@@ -17,6 +18,7 @@ define(
         ActsView,
         StagesView,
         MapView,
+        AboutView,
         SearchView
     )
     {
@@ -47,7 +49,7 @@ define(
                     callback && callback();
                   }
                 }
-                else
+                else if (currentView.depth > newView.depth)
                 {
                   newView.el.style.opacity = 1;
                   currentView.el.classList.add('pop');
@@ -60,6 +62,14 @@ define(
                     callback && callback();
                   }
                 }
+                else
+                {
+                    currentView.$el.fadeOut(function(){
+                        currentView.$el.remove();
+                        currentView = newView;
+                    });
+                    newView.$el.fadeIn();
+                }
             }
         };
         var routes = {
@@ -69,27 +79,33 @@ define(
                 view.render();
                 transitionView(view);
             },
-            '/acts': function()
+            '/festival/:slug/acts': function(slug)
             {
-                var view = new ActsView();
+                var view = new ActsView({slug: slug});
                 view.render();
                 transitionView(view);
             },
-            '/stages': function()
+            '/festival/:slug/stages': function(slug)
             {
-                var view = new StagesView();
+                var view = new StagesView({slug: slug});
                 view.render();
                 transitionView(view);
             },
-            '/map': function()
+            '/festival/:slug/map': function(slug)
             {
-                var view = new MapView();
+                var view = new MapView({slug: slug});
                 view.render();
                 transitionView(view);
             },
-            '/search': function()
+            '/festival/:slug/search': function(slug)
             {
-                var view = new SearchView();
+                var view = new SearchView({slug: slug});
+                view.render();
+                transitionView(view);
+            },
+            '/festival/:slug/about': function(slug)
+            {
+                var view = new AboutView({slug: slug});
                 view.render();
                 transitionView(view);
             }
