@@ -4,14 +4,20 @@ define(
         'underscore',
         'router',
         'js/upstage/views/Index',
-        'js/upstage/views/Acts'
+        'js/upstage/views/Acts',
+        'js/upstage/views/Stages',
+        'js/upstage/views/Map',
+        'js/upstage/views/Search'
     ],
     function(
         $,
         _,
         Router,
         IndexView,
-        ActsView
+        ActsView,
+        StagesView,
+        MapView,
+        SearchView
     )
     {
         var currentView = null;
@@ -66,6 +72,24 @@ define(
             '/acts': function()
             {
                 var view = new ActsView();
+                view.render();
+                transitionView(view);
+            },
+            '/stages': function()
+            {
+                var view = new StagesView();
+                view.render();
+                transitionView(view);
+            },
+            '/map': function()
+            {
+                var view = new MapView();
+                view.render();
+                transitionView(view);
+            },
+            '/search': function()
+            {
+                var view = new SearchView();
                 view.render();
                 transitionView(view);
             }
