@@ -3,6 +3,7 @@ define(
         'jquery',
         'underscore',
         'backbone',
+        'hammer',
         'js/upstage/components/Header.js',
         'js/upstage/components/Shelf.js',
         'js/upstage/utils/FestivalManager'
@@ -11,6 +12,7 @@ define(
         $,
         _,
         Backbone,
+        Hammer,
         Header,
         Shelf,
         FestivalManager
@@ -35,6 +37,7 @@ define(
                 me.shelf = new Shelf();
                 me.container = $('<div>');
                 me.container.addClass('container primary-pane');
+                me.menuMode(false);
             },
             render: function()
             {
@@ -96,10 +99,18 @@ define(
                 if (state)
                 {
                     me.container.on('click', returnToggle);
+                    Hammer(me.el).off("swiperight");
+                    Hammer(me.el).on("swipeleft", function() {
+                        me.toggleShelf();
+                    });
                 }
                 else
                 {
                     me.container.off('click');
+                    Hammer(me.el).off("swipeleft");
+                    Hammer(me.el).on("swiperight", function() {
+                        me.toggleShelf();
+                    });
                 }
             }
         });

@@ -5,14 +5,14 @@ require.config({
         underscore: 'js/lib/underscore',
         router: 'js/lib/director',
         backbone: 'js/lib/backbone',
-        snap: 'js/lib/snap'
+        hammer: 'js/lib/hammer'
     },
     shim: {
         'router': {
             exports: 'Router'
         },
-        'snap': {
-            exports: 'Snap'
+        'hammer': {
+            exports: 'Hammer'
         }
     }
 });

@@ -8,11 +8,15 @@ document.addEventListener(
                 jquery: 'js/lib/jquery',
                 underscore: 'js/lib/underscore',
                 router: 'js/lib/director',
-                backbone: 'js/lib/backbone'
+                backbone: 'js/lib/backbone',
+                hammer: 'js/lib/hammer'
             },
             shim: {
                 'router': {
                     exports: 'Router'
+                },
+                'hammer': {
+                    exports: 'Hammer'
                 }
             }
         });
