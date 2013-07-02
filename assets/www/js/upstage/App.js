@@ -25,52 +25,49 @@ define(
         var currentView = null;
         var transitionView = function(newView, callback)
         {
-            if(!currentView)
-            {
-                newView.$el.css({opacity:0});
-                $('.page').replaceWith(newView.$el);
-                newView.$el.animate({opacity:1}, 500);
-                currentView = newView;
-            }
-            else
-            {
-                currentView.el.parentNode.insertBefore(newView.el, currentView.el);
-                if (currentView.depth < newView.depth)
-                {
-                  newView.el.classList.add('push');
-                  currentView.el.classList.add('fade');
-                  newView.el.addEventListener('webkitAnimationEnd', pushEnd);
+            // if(!currentView)
+            // {
+                $('.page').html(newView.$el);
+            // }
+            // else
+            // {
+            //     currentView.el.parentNode.insertBefore(newView.el, currentView.el);
+            //     if (currentView.depth < newView.depth)
+            //     {
+            //       newView.el.classList.add('push');
+            //       currentView.el.classList.add('fade');
+            //       newView.el.addEventListener('webkitAnimationEnd', pushEnd);
 
-                  function pushEnd() {
-                    newView.el.removeEventListener('webkitAnimationEnd', pushEnd);
-                    newView.el.classList.remove('push');
-                    currentView.el.parentNode.removeChild(currentView.el);
-                    currentView = newView;
-                    callback && callback();
-                  }
-                }
-                else if (currentView.depth > newView.depth)
-                {
-                  newView.el.style.opacity = 1;
-                  currentView.el.classList.add('pop');
-                  currentView.el.addEventListener('webkitAnimationEnd', popEnd);
+            //       function pushEnd() {
+            //         newView.el.removeEventListener('webkitAnimationEnd', pushEnd);
+            //         newView.el.classList.remove('push');
+            //         currentView.el.parentNode.removeChild(currentView.el);
+            //         currentView = newView;
+            //         callback && callback();
+            //       }
+            //     }
+            //     else if (currentView.depth > newView.depth)
+            //     {
+            //       newView.el.style.opacity = 1;
+            //       currentView.el.classList.add('pop');
+            //       currentView.el.addEventListener('webkitAnimationEnd', popEnd);
 
-                  function popEnd(){
-                    currentView.el.removeEventListener('webkitAnimationEnd', popEnd);
-                    currentView.el.parentNode.removeChild(currentView.el);
-                    currentView = newView;
-                    callback && callback();
-                  }
-                }
-                else
-                {
-                    currentView.$el.fadeOut(function(){
-                        currentView.$el.remove();
-                        currentView = newView;
-                    });
-                    newView.$el.fadeIn();
-                }
-            }
+            //       function popEnd(){
+            //         currentView.el.removeEventListener('webkitAnimationEnd', popEnd);
+            //         currentView.el.parentNode.removeChild(currentView.el);
+            //         currentView = newView;
+            //         callback && callback();
+            //       }
+            //     }
+            //     else
+            //     {
+            //         currentView.$el.fadeOut(100, function(){
+            //             currentView.$el.remove();
+            //             currentView = newView;
+            //         });
+            //         newView.$el.show();
+            //     }
+            // }
         };
         var routes = {
             '/index': function()

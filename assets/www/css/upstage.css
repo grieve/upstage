@@ -1,18 +1,85 @@
-.active
-{
-	background: rgba(255, 255, 255, 0.1);
-    border-radius: 2px;
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.top-action
-{
-    margin-left: -20px;
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.stage-list
+.pull-right
 {
-    height:80%;
-    width:100%;
-    overflow-y: scroll;
-    z-index:1!important;
+    float:right;
+}
+
+.pull-left
+{
+    float:left;
+}
+
+.main-content
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #222;
+}
+
+.primary-pane
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 36px;
+    z-index: 8;
+    background: #222;
+}
+
+.header-nav
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #111 url(../img/stagger.png) repeat repeat;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    height: 36px;
+    font-size: 24px;
+    padding: 4px 4px 4px 0;
+    z-index: 32;
+}
+
+.header-chevron
+{
+    margin-left: -14px;
+}
+
+.header-action
+{
+    background: transparent;
+    border: 0;
+    text-decoration: none;
+    color: #eee;
+}
+
+
+.shelf-menu
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 36px;
+    width:85%;
+    z-index: 2;
+    height: 100%;
+    background: #aaa url(../img/stagger.png) repeat repeat;
 }
