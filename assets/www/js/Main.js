@@ -9,7 +9,8 @@ document.addEventListener(
                 underscore: 'js/lib/underscore',
                 router: 'js/lib/director',
                 backbone: 'js/lib/backbone',
-                hammer: 'js/lib/hammer'
+                hammer: 'js/lib/hammer',
+                radio: 'js/lib/radio'
             },
             shim: {
                 'router': {
