@@ -61,7 +61,7 @@
 
 .header-chevron
 {
-    margin-left: -14px;
+    margin-left: -20px;
     margin-right: -4px;
 }
 
@@ -79,6 +79,16 @@
     opacity: 0.3;
 }
 
+.upstage-branding
+{
+    margin: 1px 6px 0 6px;
+    width: 105px;
+    height: 30px;
+    background: url(../img/upstage_logo.png) 2px 6px no-repeat;
+    background-size: 103px 24px;
+}
+
+.upstage-branding
 
 .shelf-menu
 {

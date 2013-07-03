@@ -4,6 +4,7 @@ define(
         'underscore',
         'backbone',
         'hammer',
+        'radio',
         'js/upstage/components/Header.js',
         'js/upstage/components/Shelf.js',
         'js/upstage/utils/FestivalManager'
@@ -13,6 +14,7 @@ define(
         _,
         Backbone,
         Hammer,
+        Radio,
         Header,
         Shelf,
         FestivalManager
@@ -39,16 +41,11 @@ define(
                 me.container.addClass('container primary-pane');
                 me.menuMode(false);
 
-                var menuToggle = function(evt)
-                {
-                    console.log(me.menuOpen + evt.type);
-                    if(evt.type == "swiperight" && !me.menuOpen)
-                        me.toggleShelf();
-                    else if (evt.type == "swipeleft" && me.menuOpen)
-                        me.toggleShelf();
-                };
-                Hammer(me.el).on("swipeleft", menuToggle);
-                Hammer(me.el).on("swiperight", menuToggle);
+                Radio('toggleShelf').subscribe([me.toggleShelf, me]);
+                Hammer(me.el).on("swipeleft swiperight", function(evt){
+                    if((evt.type == "swiperight" && !me.menuOpen) || (evt.type == "swipeleft" && me.menuOpen))
+                        Radio('toggleShelf').broadcast(evt);
+                });
             },
             render: function()
             {
@@ -74,8 +71,7 @@ define(
                 var $elem = $(evt.currentTarget);
                 var action = $elem.data('action');
 
-                console.log(action);
-                me[action](evt);
+                Radio(action).broadcast(evt);
             },
             toggleShelf: function(evt)
             {

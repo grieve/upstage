@@ -3,6 +3,8 @@ define(
         'jquery',
         'underscore',
         'backbone',
+        'hammer',
+        'radio',
         'js/upstage/utils/FestivalManager',
         'text!js/upstage/templates/header.html'
     ],
@@ -10,6 +12,8 @@ define(
         $,
         _,
         Backbone,
+        Hammer,
+        Radio,
         FestivalManager,
         tmpl_Main
     )
@@ -21,6 +25,7 @@ define(
             template: _.template(tmpl_Main),
             initialize: function()
             {
+                var me = this;
             },
             render: function()
             {
