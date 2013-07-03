@@ -38,6 +38,17 @@ define(
                 me.container = $('<div>');
                 me.container.addClass('container primary-pane');
                 me.menuMode(false);
+
+                var menuToggle = function(evt)
+                {
+                    console.log(me.menuOpen + evt.type);
+                    if(evt.type == "swiperight" && !me.menuOpen)
+                        me.toggleShelf();
+                    else if (evt.type == "swipeleft" && me.menuOpen)
+                        me.toggleShelf();
+                };
+                Hammer(me.el).on("swipeleft", menuToggle);
+                Hammer(me.el).on("swiperight", menuToggle);
             },
             render: function()
             {
@@ -92,26 +103,7 @@ define(
             {
                 var me = this;
                 me.header.menuMode(state);
-                var returnToggle = function()
-                {
-                    me.toggleShelf();
-                };
-                if (state)
-                {
-                    me.container.on('click', returnToggle);
-                    Hammer(me.el).off("swiperight");
-                    Hammer(me.el).on("swipeleft", function() {
-                        me.toggleShelf();
-                    });
-                }
-                else
-                {
-                    me.container.off('click');
-                    Hammer(me.el).off("swipeleft");
-                    Hammer(me.el).on("swiperight", function() {
-                        me.toggleShelf();
-                    });
-                }
+                me.menuOpen = state;
             }
         });
 
