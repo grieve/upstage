@@ -17,6 +17,9 @@ define(
             tagName: 'section',
             className: 'shelf-menu',
             template: _.template(tmpl_Main),
+            events: {
+                'click .nav-option': 'handleNavigation'
+            },
             initialize: function(opts)
             {
                 var me = this;
@@ -24,13 +27,17 @@ define(
             render: function()
             {
                 var me = this;
-                me.$el.html(me.template());
+                me.$el.html(me.template({slug: 'glasgowbury'}));
                 me.updateActive();
             },
             updateActive: function()
             {
                 $('.shelf-nav li').removeClass('active');
-                $('.shelf-nav a[href="' + window.location.hash +'"]').parent().addClass('active');
+                $('.shelf-nav li[rel="' + window.location.hash +'"]').addClass('active');
+            },
+            handleNavigation: function(evt)
+            {
+                window.location.href = $(evt.currentTarget).attr('rel');
             }
         });
 

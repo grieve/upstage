@@ -4,64 +4,68 @@ define(
         'underscore',
         'router',
         'js/upstage/views/Window',
-        'js/upstage/views/Index',
-        'js/upstage/views/Acts',
-        'js/upstage/views/Stages',
-        'js/upstage/views/Map',
-        'js/upstage/views/About',
-        'js/upstage/views/Search'
+        'js/upstage/views/panes/Home',
+        'js/upstage/views/panes/Lineup',
+        'js/upstage/views/panes/Acts',
+        'js/upstage/views/panes/Locations',
+        'js/upstage/views/panes/Social',
+        'js/upstage/views/panes/About'
     ],
     function(
         $,
         _,
         Router,
         Window,
-        IndexView,
-        ActsView,
-        StagesView,
-        MapView,
-        AboutView,
-        SearchView
+        HomePane,
+        LineupPane,
+        ActsPane,
+        LocationsPane,
+        SocialPane,
+        AboutPane
     )
     {
         var viewport = new Window();
         viewport.render();
         var routes = {
-            '/index': function()
+            '/festival/:slug/home': function(slug)
             {
+                var view = new HomePane({slug: slug});
+                view.render();
+                viewport.transition(view);
+            },
+            '/festival/:slug/lineup': function(slug)
+            {
+                var view = new LineupPane({slug: slug});
+                view.render();
+                viewport.transition(view);
             },
             '/festival/:slug/acts': function(slug)
             {
-                var view = new ActsView({slug: slug});
+                var view = new ActsPane({slug: slug});
                 view.render();
                 viewport.transition(view);
             },
-            '/festival/:slug/stages': function(slug)
+            '/festival/:slug/locations': function(slug)
             {
-                var view = new StagesView({slug: slug});
+                var view = new LocationsPane({slug: slug});
                 view.render();
                 viewport.transition(view);
             },
-            '/festival/:slug/map': function(slug)
+            '/festival/:slug/social': function(slug)
             {
-                var view = new MapView({slug: slug});
-                view.render();
-                viewport.transition(view);
-            },
-            '/festival/:slug/search': function(slug)
-            {
-                var view = new SearchView({slug: slug});
+                var view = new SocialPane({slug: slug});
                 view.render();
                 viewport.transition(view);
             },
             '/festival/:slug/about': function(slug)
             {
-                var view = new AboutView({slug: slug});
+                var view = new AboutPane({slug: slug});
                 view.render();
                 viewport.transition(view);
             }
         };
         var router = Router(routes);
+        window.location.href = "#/festival/glasgowbury/home";
         return router;
     }
 );

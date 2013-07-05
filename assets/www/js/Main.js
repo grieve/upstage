@@ -29,7 +29,6 @@ document.addEventListener(
             function(App)
             {
                 App.init();
-                window.location.href = "#/index";
             }
         );
     },

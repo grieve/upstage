@@ -88,21 +88,27 @@ define(
                 var me = this;
                 if(me.container.offset().left > 0)
                 {
-                    me.container.animate({
-                        left: 0
-                    }, 200, function()
-                    {
-                        me.menuMode(false);
-                    });
+                    // me.container.animate({
+                    //     left: 0
+                    // }, 200, function()
+                    // {
+                    //     me.menuMode(false);
+                    // });
+                    // me.shelf.$el.animate({left: -50}, 200);
+                    me.$el.removeClass('menuOpen');
+                    me.menuMode(false);
                 }
                 else
                 {
-                    me.container.animate({
-                        left: "80%"
-                    }, 200, function()
-                    {
-                        me.menuMode(true);
-                    });
+                    // me.container.animate({
+                    //     left: "80%"
+                    // }, 200, function()
+                    // {
+                    //     me.menuMode(true);
+                    // });
+                    // me.shelf.$el.animate({left: 0}, 200);
+                    me.$el.addClass('menuOpen');
+                    me.menuMode(true);
                 }
             },
             menuMode: function(state)
