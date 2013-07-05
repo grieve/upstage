@@ -24,8 +24,6 @@ define(
         AboutPane
     )
     {
-        var viewport = new Window();
-        viewport.render();
         var routes = {
             '/festival/:slug/home': function(slug)
             {
@@ -65,6 +63,8 @@ define(
             }
         };
         var router = Router(routes);
+        var viewport = new Window({router:router});
+        viewport.render();
         window.location.href = "#/festival/glasgowbury/home";
         return router;
     }

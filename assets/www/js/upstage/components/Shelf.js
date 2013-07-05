@@ -23,6 +23,7 @@ define(
             initialize: function(opts)
             {
                 var me = this;
+                me.router = opts.router;
             },
             render: function()
             {
@@ -33,11 +34,12 @@ define(
             updateActive: function()
             {
                 $('.shelf-nav li').removeClass('active');
-                $('.shelf-nav li[rel="' + window.location.hash +'"]').addClass('active');
+                $('.shelf-nav li[rel="' + window.location.hash.substring(1) +'"]').addClass('active');
             },
             handleNavigation: function(evt)
             {
-                window.location.href = $(evt.currentTarget).attr('rel');
+                var me = this;
+                me.router.setRoute($(evt.currentTarget).attr('rel'));
             }
         });
 

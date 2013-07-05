@@ -27,7 +27,7 @@ define(
             events :{
                 'click .action': 'handleActions'
             },
-            initialize: function()
+            initialize: function(opts)
             {
                 // var fm = new FileManager("Upstage");
                 // fm.write('data/test/test.txt', "testing123123", 'w', function(data)
@@ -35,8 +35,9 @@ define(
                 //     fm.read('data/test/test.txt', function(data){ console.log(data); });
                 // });
                 var me = this;
+                me.router = opts.router;
                 me.header = new Header();
-                me.shelf = new Shelf();
+                me.shelf = new Shelf({router:me.router});
                 me.container = $('<div>');
                 me.container.addClass('container primary-pane');
                 me.menuMode(false);
