@@ -66,8 +66,8 @@ define(
             transition: function(newView)
             {
                 var me = this;
-                me.container.html(newView.$el);
                 me.shelf.updateActive();
+                me.container.html(newView.$el);
                 if(me.menuOpen)
                 {
                     Radio('toggleShelf').broadcast();
