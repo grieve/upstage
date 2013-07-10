@@ -1,3 +1,22 @@
-<div class="stage-rule"></div>
-<div class="times-rule"></div>
-<div class="lineups-frame"><div class="lineups"></div></div>
+<div class="lineups">
+<% for (idx in festival.days) { %>
+    <% var day = festival.days[idx] %>
+    <div class="day-pane">
+        <h3><%- day.date %></h3>
+        <% for (jdx in day.stages) {%>
+            <% var stage = day.stages[jdx] %>
+            <div class="stage-pane">
+                <h4><%- stage.name %></h4>
+                <div class="act-pane">
+                    <% for (kdx in stage.acts) { %>
+                        <% var act = stage.acts[kdx] %>
+                        <div class="act" data-start="<%- act.start %>" data-stop="<%- act.end %>" data-act-id="<%- act.id %>">
+                            <%- act.name %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+</div>
