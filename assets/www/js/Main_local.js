@@ -6,7 +6,8 @@ require.config({
         router: 'js/lib/director',
         backbone: 'js/lib/backbone',
         hammer: 'js/lib/hammer',
-        radio: 'js/lib/radio'
+        radio: 'js/lib/radio',
+        moment: 'js/lib/moment'
     },
     shim: {
         'router': {
@@ -14,6 +15,9 @@ require.config({
         },
         'hammer': {
             exports: 'Hammer'
+        },
+        'moment': {
+            exports: 'moment'
         }
     }
 });
